@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 21, 2018 6:10:02 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.fipa.dto.FnaCpfDepntProtect" table="FNA_CPF_DEPEN_PROTECT">
+        <id name="depntProCPFId" type="string">
+            <column name="PRO_ID" length="20" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="fnaSelfspouseDets" class="com.fipa.dto.FnaSelfspouseDets" fetch="select">
+            <column name="FNA_ID" length="20" />
+        </many-to-one>
+        <property name="txtFldDepntProtectCurrAge" type="string">
+            <column name="CPF_DEP_PROTECT_YEAR" length="20" />
+        </property>
+        <property name="txtFldDepntProtectAnnlPrem" type="java.lang.Double">
+            <column name="CPF_DEP_PROTECT_PREMIUM" precision="126" scale="0" />
+        </property>
+        <property name="txtFldDepntProtectSumAssured" type="java.lang.Double">
+            <column name="CPF_DEP_PROTECT_SUMASSURED" precision="126" scale="0"/>
+        </property>
+        <property name="txtFldDepntProtectCreatedBy" type="string">
+            <column name="CPF_DEP_PROTECT_CREATED_BY" length="20" />
+        </property>
+        <property name="txtFldDepntProtectCreatedDate" type="date">
+            <column name="CPF_DEP_PROTECT_CREATED_DATE" length="20" />
+        </property>
+        <property name="txtFldDepntProtectModifiedBy" type="string">
+            <column name="CPF_DEP_PROTECT_MODIFIED_BY" length="20" />
+        </property>
+        <property name="txtFldDepntProtectModifiedDate" type="date">
+            <column name="CPF_DEP_PROTECT_MODIFIED_DATE" length="20" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

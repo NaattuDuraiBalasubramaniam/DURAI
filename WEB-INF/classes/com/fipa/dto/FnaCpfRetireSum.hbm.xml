@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 21, 2018 6:10:02 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.fipa.dto.FnaCpfRetireSum" table="FNA_CPFRETIRE_SUM_SCHEME">
+        <id name="retSumId" type="string">
+            <column name="RETSUM_ID" length="20" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="fnaSelfspouseDets" class="com.fipa.dto.FnaSelfspouseDets" fetch="select">
+            <column name="FNA_ID" length="20" />
+        </many-to-one>
+        <property name="txtFldAgeinJuly2020Year" type="string">
+            <column name="CPF_RETSUM_AGE" length="20" />
+        </property>
+        <property name="txtFldRssPayOutAge" type="string">
+            <column name="CPF_RETSUM_RSS_PAYOUT" length="20" />
+        </property>
+        <property name="txtFldRssPayOutAmt" type="java.lang.Double">
+            <column name="CPF_RETSUM_RSS_MONTH" precision="126" scale="0"  />
+        </property>
+        <property name="txtFldRetSumCreatedBy" type="string">
+            <column name="CPF_RETSUM_CREATED_BY" length="20" />
+        </property>
+        <property name="txtFldRetSumCreatedDate" type="date">
+            <column name="CPF_RETSUM_CREATED_DATE" length="7" />
+        </property>
+        <property name="txtFldRetSumModifiedBy" type="string">
+            <column name="CPF_RETSUM_MODIFIED_BY" length="20" />
+        </property>
+        <property name="txtFldRetSumModifiedDate" type="date">
+            <column name="CPF_RETSUM_MODIFIED_DATE" length="7" />
+        </property> 
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 21, 2018 6:10:02 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.fipa.dto.FnaCpfMediShieldLife" table="FNA_CPF_MEDISHIELD">
+        <id name="mediCPFId" type="string">
+            <column name="MED_ID" length="20" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="fnaSelfspouseDets" class="com.fipa.dto.FnaSelfspouseDets" fetch="select">
+            <column name="FNA_ID" length="20" />
+        </many-to-one>
+        <property name="txtFldMediShieldaAge" type="string">
+            <column name="CPF_MEDISHIELD_AGE" length="20" />
+        </property>
+        <property name="txtFldMediShieldAnnlPrem" type="java.lang.Double">
+            <column name="CPF_MEDISHIELD_PREMIUM" precision="126" scale="0" />
+        </property>
+        <property name="txtFldMediShieldCreatedBy" type="string">
+            <column name="CPF_MEDISHIELD_CREATED_BY" length="20" />
+        </property>
+        <property name="txtFldMediShieldCreatedDate" type="date">
+            <column name="CPF_MEDISHIELD_CREATED_DATE" length="7" />
+        </property>
+        <property name="txtFldMediShieldModifiedBy" type="string">
+            <column name="CPF_MEDISHIELD_MODIFIED_BY" length="20" />
+        </property>
+        <property name="txtFldMediShieldModifiedDate" type="date">
+            <column name="CPF_MEDISHIELD_MODIFIED_DATE" length="7" />
+        </property> 
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 21, 2018 6:10:02 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.fipa.dto.FnaCpfCareShieldLife" table="FNA_CPF_CARESHIELD">
+        <id name="careCPFId" type="string">
+            <column name="CARE_ID" length="20" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="fnaSelfspouseDets" class="com.fipa.dto.FnaSelfspouseDets" fetch="select">
+            <column name="FNA_ID" length="20" />
+        </many-to-one>
+        <property name="txtFldCareShieldYear" type="string">
+            <column name="CPF_CARESHIELD_YEAR" length="20" />
+        </property>
+        <property name="txtFldCareShieldAnnlPrem" type="java.lang.Double">
+            <column name="CPF_CARESHIELD_PREMIUM" precision="126" scale="0"  />
+        </property>
+        <property name="txtFldCareShieldPayout" type="java.lang.Double">
+            <column name="CPF_CARESHIELD_MONTH_PAYOUT" precision="126" scale="0"  />
+        </property>
+        <property name="txtFldCareShieldClaim" type="string">
+            <column name="CPF_CARESHIELD_CLAIM" length="20" />
+        </property>
+        <property name="txtFldCareShieldPremIncRate" type="java.lang.Double">
+            <column name="CPF_CARESHIELD_PREM_INCRE_RATE" precision="20" scale="0"  />
+        </property>
+        <property name="txtFldCareShieldPayIncRate" type="java.lang.Double">
+            <column name="CPF_CARESHIELD_PAYOUT_INCRE_RATE" precision="20" scale="0"  />
+        </property>
+        <property name="txtFldCareShieldCreatedBy" type="string">
+            <column name="CPF_CARESHIELD_CREATED_BY" length="20" />
+        </property>
+        <property name="txtFldCareShieldCreatedDate" type="date">
+            <column name="CPF_CARESHIELD_CREATED_DATE" length="7" />
+        </property>
+        <property name="txtFldCareShieldModifiedBy" type="string">
+            <column name="CPF_CARESHIELD_MODIFIED_BY" length="20" />
+        </property>
+        <property name="txtFldCareShieldModifiedDate" type="date">
+            <column name="CPF_CARESHIELD_MODIFIED_DATE" length="7" />
+        </property> 
+    </class>
+</hibernate-mapping>

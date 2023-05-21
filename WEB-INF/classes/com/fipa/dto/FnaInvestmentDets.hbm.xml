@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.fipa.dto.FnaInvestmentDets" table="FNA_INVESTMENT_DETS" >
+	
+		<id name="priFldInvFnaInvestmentId" type="string">
+            <column name="FNA_INVESTMENT_ID" length="20" />
+            <generator class="assigned" />
+        </id>
+		
+		<property name="selInvOwnership" type="string">
+            <column name="OWNERSHIP" length="6" />
+        </property>
+		
+		<property name="txtFldInvAmt" type="java.lang.Double">
+            <column name="AMOUNT_INVESTED" precision="126" scale="0" />
+        </property>
+		
+		<property name="selPaymentMethod" type="string">
+            <column name="PAYMENT_METHOD" length="5" />
+        </property>
+		
+		<property name="selPFAnalysis" type="string">
+            <column name="IS_PF_ANALYSIS_YN" length="1" />
+        </property>
+		
+		<property name="selInvType" type="string">
+            <column name="TYPE_OF_INVESTMENT" length="8" />
+        </property>
+		
+		<property name="txtFldEstRoI" type="java.lang.Double">
+            <column name="ESTIMATED_ROI" precision="126" scale="0" />
+        </property>
+		
+		<property name="selInvInstituteName" type="string">
+            <column name="INSTITUTE_NAME" length="80" />
+        </property>
+		
+		<property name="selInvDesc" type="string">
+            <column name="INV_DESCRIPTION" length="80" />
+        </property>
+		
+		<property name="txtFldInvAccNo" type="string">
+            <column name="ACCOUNT_NUMBER" length="20" />
+        </property>
+		
+		<property name="selRSPExists" type="string">
+            <column name="IS_RSP_EXIST_YN" length="1" />
+        </property>
+		
+		<property name="txtFldRSPAmt" type="java.lang.Double">
+            <column name="RSP_AMOUNT" precision="126" scale="0" />
+        </property>
+		
+		<property name="selInvFreq" type="string">
+            <column name="RSP_FREQUENCY" length="12" />
+        </property>
+		
+		<property name="txtFldRSPYrs" type="java.lang.Integer">
+            <column name="RSP_INVESTMENT_YRS" precision="2" scale="0" />
+        </property>
+		
+		<property name="txtFldInvDate" type="date">
+            <column name="NAV_DT" length="7" />
+        </property>
+		
+		<property name="txtFldNAVPrice" type="java.lang.Double">
+            <column name="NAV_PRICE" precision="126" scale="0" />
+        </property>
+		
+		<property name="txtFldUnits" type="java.lang.Double">
+            <column name="UNITS" precision="126" scale="0" />
+        </property>
+		
+		<property name="txtFldCurrPFNav" type="java.lang.Double">
+            <column name="CURRENT_NAV" precision="126" scale="0" />
+        </property>
+		
+		<property name="selIsDividendReinv" type="string">
+            <column name="IS_DIVIDEND_REINV_YN" length="1" />
+        </property>
+		
+		<property name="selDividendBasedOn" type="string">
+            <column name="DIVIDEND_BASED_ON" length="3" />
+        </property>
+		
+		<property name="txtFldPARVal" type="java.lang.Double">
+            <column name="PAR_VALUE" precision="126" scale="0" />
+        </property>
+		
+		<property name="txtFldDividendRate" type="java.lang.Double">
+            <column name="DIVIDEND_RATE" precision="126" scale="0" />
+        </property>
+		
+		<property name="selDivPaymentMode" type="string">
+            <column name="DIVIDEND_PAYMENT_MODE" length="12" />
+        </property>
+		
+		<property name="txtFldAnnualDivAmt" type="java.lang.Double">
+            <column name="ANNUAL_DIVIDEND_AMT" precision="126" scale="0" />
+        </property>
+		
+		<property name="txtFldInvPeriod" type="java.lang.Integer">
+            <column name="INVESTMENT_PERIOD" precision="2" scale="0" />
+        </property>
+		
+		<property name="hdnFldInvCreatedBy" type="string">
+            <column name="CREATED_BY" length="20" />
+        </property>
+		
+		<property name="hdnFldInvCreatedDt" type="date">
+            <column name="CREATED_DT" length="7" />
+        </property>
+		
+		<property name="hdnFldInvModifiedBy" type="string">
+            <column name="MODIFIED_BY" length="20" />
+        </property>
+		
+		<property name="hdnFldInvModifiedDt" type="date">
+            <column name="MODIFIED_DT" length="7" />
+        </property>
+		
+		<property name="hdnFldInvIsCustomInstitute" type="string">
+            <column name="IS_CUSTOM_INSTITUTE" length="1" />
+        </property>
+		
+		<property name="hdnFldInvIsCustomDescriptn" type="string">
+            <column name="IS_CUSTOM_DESCRIPTN" length="1" />
+        </property>
+		
+		<many-to-one name="fnaSelfspouseDets" class="com.fipa.dto.FnaSelfspouseDets" fetch="select">
+            <column name="FNA_ID" length="20" />
+        </many-to-one>
+		
+		<set name="fnaInvObjectiveDets" table="FNA_INVESTMENT_OBJECTIVE_DETS" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="FNA_INVESTMENT_ID" length="20" />
+            </key>
+            <one-to-many class="com.fipa.dto.FnaInvObjectiveDets" />
+        </set>
+		
+	</class>
+</hibernate-mapping>

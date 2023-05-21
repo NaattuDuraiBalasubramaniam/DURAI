@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 21, 2018 6:10:02 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.fipa.dto.FnaSrsCurBalWithdrawPlan" table="FNA_SRS_CUR_BAL_WITHDRAW_PLAN">
+        <id name="srswithdrawId" type="string">
+            <column name="SRS_ID" length="20" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="fnaSelfspouseDets" class="com.fipa.dto.FnaSelfspouseDets" fetch="select">
+            <column name="FNA_ID" length="20" />
+        </many-to-one>
+        <property name="txtFldSrsSlfOrdinary" type="java.lang.Double">
+            <column name="SRS_CPF_SELF_CURRENT_BALANCE" precision="126" scale="0"  />
+        </property>
+        <property name="txtFldSrsSpsOrdinary" type="java.lang.Double">
+            <column name="SRS_CPF_SPOUSE_CURRENT_BALANCE" precision="126" scale="0"   />
+        </property>
+         <property name="txtFldSrsWithdrawStartAge" type="string">
+            <column name="SRS_CPF_WITHDRAWAL_START_AGE" length="20" />
+        </property>
+         <property name="txtFldSrsWithdrawPeriod" type="string">
+            <column name="SRS_CPF_WITHDRAWAL_PERIOD" length="20" />
+        </property>
+         <property name="txtFldSrsWithdrawAmt" type="java.lang.Double">
+            <column name="SRS_CPF_WITHDRAWAL_AMOUNT" precision="126" scale="0" />
+        </property>
+        <property name="txtFldSrsCreatedBy" type="string">
+            <column name="SRS_CREATED_BY" length="20" />
+        </property>
+        <property name="txtFldSrsCreatedDate" type="date">
+            <column name="SRS_CREATED_DATE" length="7" />
+        </property>
+        <property name="txtFldSrsModifiedBy" type="string">
+            <column name="SRS_MODIFIED_BY" length="20" />
+        </property>
+        <property name="txtFldSrsModifiedDate" type="date">
+            <column name="SRS_MODIFIED_DATE" length="7" />
+        </property> 
+    </class>
+</hibernate-mapping>

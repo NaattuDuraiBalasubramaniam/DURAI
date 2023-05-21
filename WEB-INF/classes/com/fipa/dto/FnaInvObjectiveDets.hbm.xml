@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.fipa.dto.FnaInvObjectiveDets" table="FNA_INVESTMENT_OBJECTIVE_DETS" >
+		
+		<id name="priFldInvObjectiveId" type="string">
+            <column name="INV_OBJECTTIVE_ID" length="20" />
+            <generator class="assigned" />
+        </id>
+		
+		<property name="selInvObj" type="string">
+            <column name="INVESTMENT_OBJECTIVE" length="40" />
+        </property>
+		
+		<property name="txtFldAccumltnPerc" type="java.lang.Double">
+            <column name="ALLOCATION_PERC" precision="126" scale="0" />
+        </property>
+		
+		<property name="txtFldYrsToRetOrTer" type="java.lang.Integer">
+            <column name="RETIRE_TERTIARY_YEAR" precision="2" scale="0" />
+        </property>
+		
+		<property name="selChildName" type="string">
+            <column name="CHILD_NAME" length="40" />
+        </property>
+		
+		<property name="selDisbursmentBy" type="string">
+            <column name="DISBURSEMENT_BY" length="6" />
+        </property>
+		
+		<property name="txtFldDisWithdrawYear" type="java.lang.Integer">
+            <column name="WITHDRAWAL_YEAR" precision="4" scale="0" />
+        </property>
+		
+		<property name="txtFldYrsOfDisbrsmnt" type="java.lang.Integer">
+            <column name="YRS_OF_DISBURSEMENT" precision="2" scale="0" />
+        </property>
+		
+		<property name="txtFldDisAnnualAmt" type="java.lang.Double">
+            <column name="ANNUAL_AMOUNT" precision="126" scale="0" />
+        </property>
+		
+		<property name="hdnFldInvObjCreatedBy" type="string">
+            <column name="CREATED_BY" length="20" />
+        </property>
+		
+		<property name="hdnFldInvObjCreatedDt" type="date">
+            <column name="CREATED_DT" length="7" />
+        </property>
+		
+		<property name="hdnFldInvObjModifiedBy" type="string">
+            <column name="MODIFIED_BY" length="20" />
+        </property>
+		
+		<property name="hdnFldInvObjModifiedDt" type="date">
+            <column name="MODIFIED_DT" length="7" />
+        </property>
+		
+		<many-to-one name="fnaInvestmentDets" class="com.fipa.dto.FnaInvestmentDets" fetch="select">
+            <column name="FNA_INVESTMENT_ID" length="20" />
+        </many-to-one>
+		
+	</class>
+</hibernate-mapping>

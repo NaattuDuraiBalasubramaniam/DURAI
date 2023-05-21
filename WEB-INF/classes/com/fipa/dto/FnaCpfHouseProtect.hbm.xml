@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 21, 2018 6:10:02 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.fipa.dto.FnaCpfHouseProtect" table="FNA_CPF_HOUSE_PROTECT">
+        <id name="houseCPFId" type="string">
+            <column name="HOUSE_ID" length="20" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="fnaSelfspouseDets" class="com.fipa.dto.FnaSelfspouseDets" fetch="select">
+            <column name="FNA_ID" length="20" />
+        </many-to-one>
+        <property name="txtFldHouseProtectYear" type="string">
+            <column name="CPF_HOUSEPROTECT_YEAR" length="20" />
+        </property>
+        <property name="txtFldHouseProtectPremium" type="java.lang.Double">
+            <column name="CPF_HOUSEPROTECT_PREMIUM" precision="126" scale="0" />
+        </property>
+         <property name="txtFldHouseProtectCovPeriodAge" type="string">
+            <column name="CPF_HOUSEPROTECT_COVERAGE_PERIOD" length="20" />
+        </property>
+         <property name="txtFldHouseProtectAmount" type="java.lang.Double">
+            <column name="CPF_HOUSEPROTECT_AMOUNT" precision="126" scale="0" />
+        </property>
+         <property name="txtFldHouseProtectAge" type="string">
+            <column name="CPF_HOUSEPROTECT_AGE" length="20" />
+        </property>
+         <property name="txtFldHouseProtectCoverage" type="string">
+            <column name="CPF_HOUSEPROTECT_COVERAGE" length="20" />
+        </property>
+         <property name="txtFldHouseProtectTerm" type="string">
+            <column name="CPF_HOUSEPROTECT_TERM" length="20" />
+        </property>
+        <property name="txtFldHouseProtectPremiumEnds" type="string">
+            <column name="CPF_HOUSEPROTECT_PREMIUM_ENDS" length="20" />
+        </property>
+        <property name="txtFldHouseProtectCreatedBy" type="string">
+            <column name="CPF_HOUSEPROTECT_CREATED_BY" length="20" />
+        </property>
+        <property name="txtFldHouseProtectCreatedDate" type="date">
+            <column name="CPF_HOUSEPROTECT_CREATED_DATE" length="7" />
+        </property>
+        <property name="txtFldHouseProtectModifiedBy" type="string">
+            <column name="CPF_HOUSEPROTECT_MODIFIED_BY" length="20" />
+        </property>
+        <property name="txtFldHouseProtectModifiedDate" type="date">
+            <column name="CPF_HOUSEPROTECT_MODIFIED_DATE" length="7" />
+        </property> 
+    </class>
+</hibernate-mapping>

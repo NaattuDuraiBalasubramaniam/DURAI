@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 21, 2018 6:10:02 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.fipa.dto.FnaCpfElderShieldLife" table="FNA_CPF_ELDERSHIELD">
+        <id name="elderCPFId" type="string">
+            <column name="ELDER_ID" length="20" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="fnaSelfspouseDets" class="com.fipa.dto.FnaSelfspouseDets" fetch="select">
+            <column name="FNA_ID" length="20" />
+        </many-to-one>
+        <property name="txtFldEldershieldAge" type="string">
+            <column name="CPF_ELDERSHIELD_AGE" length="20" />
+        </property>
+        <property name="txtFldElderShieldAnnlPrem" type="java.lang.Double">
+            <column name="CPF_ELDERSHIELD_PREMIUM" precision="126" scale="0" />
+        </property>
+        <property name="txtFldElderShieldPlan" type="string">
+            <column name="CPF_ELDERSHIELD_PLAN" length="20" />
+        </property>
+        <property name="txtFldElderShieldPremPayment" type="java.lang.Double">
+            <column name="CPF_ELDERSHIELD_PAYMENT" precision="126" scale="0" />
+        </property>
+        <property name="txtFldElderShieldGender" type="string">
+            <column name="CPF_ELDERSHIELD_GENDER" length="20" />
+        </property> 
+        <property name="txtFldElderShieldCreatedBy" type="string">
+            <column name="CPF_ELDERSHIELD_CREATED_BY" length="20" />
+        </property>
+        <property name="txtFldElderShieldCreatedDate" type="date">
+            <column name="CPF_ELDERSHIELD_CREATED_DATE" length="7" />
+        </property>
+        <property name="txtFldElderShieldModifiedBy" type="string">
+            <column name="CPF_ELDERSHIELD_MODIFIED_BY" length="20" />
+        </property>
+        <property name="txtFldElderShieldModifiedDate" type="date">
+            <column name="CPF_ELDERSHIELD_MODIFIED_DATE" length="7" />
+        </property> 
+    </class>
+</hibernate-mapping>

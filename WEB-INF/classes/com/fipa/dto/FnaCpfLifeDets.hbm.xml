@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jun 21, 2018 6:10:02 PM by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.fipa.dto.FnaCpfLifeDets" table="FNA_CPFLIFE_DETS">
+        <id name="retCPFId" type="string">
+            <column name="CPF_ID" length="20" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="fnaSelfspouseDets" class="com.fipa.dto.FnaSelfspouseDets" fetch="select">
+            <column name="FNA_ID" length="20" />
+        </many-to-one>
+        <property name="cpfLifeYear" type="string">
+            <column name="CPFLIFE_YEAR" length="20" />
+        </property>
+        <property name="cpfLifeBrsamt" type="java.lang.Double">
+            <column name="CPFLIFE_BRS_AMOUNT" precision="126" scale="0"  />
+        </property>
+        <property name="cpfLifeFrsamt" type="java.lang.Double">
+            <column name="CPFLIFE_FRS_AMOUNT" precision="126" scale="0" />
+        </property>
+        <property name="cpfLifeErsamt" type="java.lang.Double">
+            <column name="CPFLIFE_ERS_AMOUNT" precision="126" scale="0" />
+        </property>
+        <property name="cpfLifeProptocpf" type="string">
+            <column name="CPFLIFE_PROP_TO_CPF" length="20" />
+        </property>
+        <property name="cpfLifeRasavings" type="string">
+            <column name="CPFLIFE_RA_SAVINGS" length="20" />
+        </property>
+        <property name="cpfLifePlan" type="string">
+            <column name="CPFLIFE_PLAN" length="20" />
+        </property>
+        <property name="cpfLifePayoutamt" type="java.lang.Double">
+            <column name="CPFLIFE_PAYOUT_AMOUNT" precision="126" scale="0"  />
+        </property>
+        <property name="cpfLifeCreatedBy" type="string">
+            <column name="CPFLIFE_CREATED_BY" length="20" />
+        </property>
+        <property name="cpfLifeCreatedDate" type="date">
+            <column name="CPFLIFE_CREATED_DATE" length="7" />
+        </property>
+        <property name="cpfLifeModifiedBy" type="string">
+            <column name="CPFLIFE_MODIFIED_BY" length="20" />
+        </property>
+        <property name="cpfLifeModifiedDate" type="date">
+            <column name="CPFLIFE_MODIFIED_DATE" length="7" />
+        </property> 
+    </class>
+</hibernate-mapping>
